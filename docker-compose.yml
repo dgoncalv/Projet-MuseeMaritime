@@ -1,0 +1,57 @@
+version: '3'
+services:
+  app:
+    build:
+      args: 
+        APP_DOCUMENT_ROOT: /var/www/apps/app
+      context: .
+      dockerfile: ./build/app/Dockerfile
+    image: iutlr-info2-dw-app-angular
+    container_name: iutlr-info2-dw-app-angular
+    ports:
+      - 4200:4200
+    volumes:
+      - "./app:/var/www/apps/app"
+      - node-modules:/var/www/apps/app/node_modules
+    networks:
+      - back-network
+    depends_on:
+      - api 
+      - db
+  api:
+    build:
+      args: 
+        API_DOCUMENT_ROOT: /var/www/html/api/public
+      context: ./build/api
+    image: iutlr-info2-apache-sf5-api
+    container_name: iutlr-info2-apache-sf5-api
+    hostname: apihost
+    ports:
+      - 9999:80
+    volumes:
+      - ./api:/var/www/html/api:delegated
+    networks:
+      - back-network
+    depends_on:
+      - db
+  db:
+    build:
+      context: build/mysql
+    image: iutlr-info-mysql5.7
+    container_name: iutlr-info-mysql5.7
+    ports:
+      - 3306:3306
+    volumes:
+      - "./mysql/:/var/lib/mysql"
+    environment:
+      MYSQL_DATABASE: dbproject
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: dbpassword
+      MYSQL_ROOT_PASSWORD: dbroot
+    networks:
+      - back-network
+networks:
+  back-network: 
+    driver: bridge
+volumes:
+  node-modules:

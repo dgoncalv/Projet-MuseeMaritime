@@ -1,0 +1,6 @@
+<div class="horaire">
+    <div *ngIf="open; else elseBlock">Le Musée est Ouvert !</div>
+        <ng-template #elseBlock >
+            <div>Le Musée est Fermé!</div>
+        </ng-template>
+</div>

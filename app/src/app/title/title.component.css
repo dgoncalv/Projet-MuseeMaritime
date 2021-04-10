@@ -1,0 +1,20 @@
+:host{
+  width: 100%;
+  height: auto;
+}
+h1{
+  color: #1C2C54;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Open Sans Semibold";
+  background-color:#FAC710;
+  margin: 0;
+  height: 20vw;
+  /*Permet de gerer l'alignement verticale et horizontale*/
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0.5rem;
+}

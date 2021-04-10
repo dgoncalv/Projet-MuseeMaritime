@@ -1,0 +1,25 @@
+h2, .bateau-name{
+  font-family: "Open Sans Semibold";
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  width:90%;
+  height: auto;
+  padding-top: 20px;
+}
+.bateau-box{
+  border: 2px solid white;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  width:90%;
+  height: auto;
+}
+.visitable{
+  font-size: 15px;
+}
+.bateau-infos{
+  padding-bottom: 8em;
+}

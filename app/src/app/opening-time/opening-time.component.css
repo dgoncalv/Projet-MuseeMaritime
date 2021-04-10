@@ -1,0 +1,14 @@
+:host{
+  width:100%;
+  height: auto;
+}
+.horaire{
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Open Sans Semibold";
+  font-weight:bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0.5rem;
+}
